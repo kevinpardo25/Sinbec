@@ -1,0 +1,34 @@
+//extends layout
+
+block content
+  h1= title
+  
+  
+   if(user) 
+    ul
+      li
+        img(src="#{user.photo}")
+      li Bienvenido #{user.name}
+      li
+      //formulario para la barra de busqueda
+      form(name="add-estimation", method="post")
+        div.input
+            span.label Carrera a buscar
+            input(type="text", name="title")
+        div.actions
+            //input(type="submit", value="Buscar")
+            <button class="button" id="buscar"> Buscar </button>
+            <button class="button" id="prueba"> Prueba </button>
+            
+            //link para salir de la session
+        a(href='logout') Salir
+   else
+      ul
+      li
+        //a(href='auth/twitter') Login con Twitter
+        <a href="auth/twitter"><button class="button">login con twitter</button></a>
+      li
+        //a(href='auth/facebook') Login con Facebook
+        <a href="auth/facebook"><button class="button">login con facebook</button></a>
+
+
